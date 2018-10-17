@@ -327,7 +327,7 @@ public class SavedSeats extends AppCompatActivity {
     Button Saveinfo, button;
     SharedPreferences seats;
    
-    Set<Integer> selected;
+    int[] selected=new int[]{0};
 
     
     String str_name, str_empcode, str_psnum, str_phnmber;
@@ -337,10 +337,8 @@ public class SavedSeats extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booked_info);
-      
-
-      selected= new HashSet<>();
-
+        Bundle extras = getIntent().getExtras();
+        selected=extras.getIntArray("selected");
         Saveinfo = findViewById(R.id.saveinfo);
         button = findViewById(R.id.button);
         Pname = findViewById(R.id.PName);

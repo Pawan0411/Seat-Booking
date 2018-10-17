@@ -32,6 +32,7 @@ public class SeatSelection extends AppCompatActivity implements OnSeatSelected {
 
     private static final int COLUMNS =5;
     static Set<String>positions;
+    Set<Integer> selected;
     // private TextView txtSeatSelected;
     Button mBook;
     TextView time;
@@ -71,6 +72,7 @@ public class SeatSelection extends AppCompatActivity implements OnSeatSelected {
 
         AirplaneAdapter adapter = new AirplaneAdapter(this, items);
         recyclerView.setAdapter(adapter);
+        selected= adapter.selected;
     }
     @Override
     public void onSeatSelected(int count) {
@@ -95,6 +97,8 @@ public class SeatSelection extends AppCompatActivity implements OnSeatSelected {
                     // Start NewActivity.class
                     Intent myIntent = new Intent(SeatSelection.this,
                             SavedSeats.class);
+
+                    myIntent.putExtra("selected",selected.toArray());
                     startActivity(myIntent);
                 }
             });
