@@ -1,6 +1,6 @@
 package com.university.soa.bus;
 
-import android.content.Context;
+/*import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -32,7 +32,7 @@ import static android.view.View.VISIBLE;
 
 /**
  * Created by pkumar on 5/15/18.
- */
+ 
 
 public class SavedSeats extends AppCompatActivity {
     AppStatus appStatus;
@@ -48,10 +48,6 @@ public class SavedSeats extends AppCompatActivity {
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private FirebaseAuth mAuth;
-    private Context mContext = SavedSeats.this;
-    private List<BookedInfo> mbookDataList;
-    private PrefAdapter mBookAdapter;
-RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +65,7 @@ RecyclerView recyclerView;
         editText2=(EditText)findViewById(R.id.editText2);
         /*E2=(EditText)findViewById(R.id.editText2);
         E3=(EditText)findViewById(R.id.editText5);
-        E4=(EditText)findViewById(R.id.editText11);*/
+        E4=(EditText)findViewById(R.id.editText11);
         T1=(TextView)findViewById(R.id.Opt);
         T2=(TextView)findViewById(R.id.Details);
 
@@ -222,13 +218,10 @@ RecyclerView recyclerView;
         String value = Pname.getText().toString();
         /*String value2 = E2.getText().toString();
         String value3 = E3.getText().toString();
-        String value4 = E4.getText().toString();*/
-       // PrefUtil.saveString(mContext, key, value);
-        ref.push().setValue(Pname);
-            passnumber.setText("");
-            Pname.setText("");
+        String value4 = E4.getText().toString();
+     
             Toast.makeText(this, "Registered !!", Toast.LENGTH_SHORT).show();
-          BookedInfo newPrefData = new BookedInfo(key, value);
+         
             if (mbookDataList.contains(newPrefData)) {
                 int index = mbookDataList.indexOf(newPrefData);
                 mbookDataList.remove(index);
@@ -248,7 +241,7 @@ RecyclerView recyclerView;
                     break;
             }
         }
-    };*/
+    };
     private void signInWithPhoneAuthCredential (PhoneAuthCredential credential) {
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -304,6 +297,87 @@ RecyclerView recyclerView;
         }else{
             Toast.makeText(getApplicationContext(),"Please see that you have Active internet connection..",Toast.LENGTH_LONG).show();
         }
+    }
+
     }*/
 
+
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.university.soa.bus.SeatClass.OnSeatSelected;
+import com.university.soa.bus.SeatClass.SelectableAdapter;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class SavedSeats extends AppCompatActivity {
+
+
+    DatabaseReference ref;
+
+
+    Button Saveinfo, button;
+    SharedPreferences seats;
+   
+    Set<Integer> selected;
+
+    
+    String str_name, str_empcode, str_psnum, str_phnmber;
+    EditText Pname, Pnumber, Empcode, passnumber;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.booked_info);
+      
+
+      selected= new HashSet<>();
+
+        Saveinfo = findViewById(R.id.saveinfo);
+        button = findViewById(R.id.button);
+        Pname = findViewById(R.id.PName);
+        Pnumber = findViewById(R.id.PhnNumber);
+        Empcode = findViewById(R.id.EmpCode);
+        passnumber = findViewById(R.id.PsNum);
+        ref = FirebaseDatabase.getInstance().getReference().child("booked details");
+
+        Saveinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                   store();
+                 }
+        });
     }
+
+    public void store() {
+        str_name = Pname.getText().toString().trim();
+        str_empcode = Empcode.getText().toString().trim();
+        str_phnmber = Pnumber.getText().toString().trim();
+        str_psnum = passnumber.getText().toString().trim();
+
+        //Addata ad = new Addata(str_name, str_empcode, str_phnmber, str_psnum);
+            //positions1.remove(positions);
+           // String b = String.valueOf(seats.getStringSet("s", positions));
+               ref.child(str_empcode).push().setValue(String.valueOf(selected));
+           // Toast.makeText(this, "multiple", Toast.LENGTH_SHORT).show();
+
+
+        Toast.makeText(SavedSeats.this, "Booked", Toast.LENGTH_SHORT).show();
+    }
+
+ 
+}
+
+
+
+
+
+

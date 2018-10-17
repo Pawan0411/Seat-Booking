@@ -33,9 +33,9 @@ public class book extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book);
 
-        B1=(Button)findViewById(R.id.button7);
-        B2=(Button)findViewById(R.id.button9);
-        B3=(Button)findViewById(R.id.button8);
+        B1= findViewById(R.id.button7);
+        B2= findViewById(R.id.button9);
+        B3= findViewById(R.id.button8);
 
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("EEE, MMM d, ''yy");

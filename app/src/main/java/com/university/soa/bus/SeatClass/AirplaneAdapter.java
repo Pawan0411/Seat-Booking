@@ -132,7 +132,7 @@ public class AirplaneAdapter extends SelectableAdapter<RecyclerView.ViewHolder> 
             });
 
 
-            holder.imgSeatSelected.setVisibility(isSelected(position)||!item.isSelectable() ? View.VISIBLE : View.INVISIBLE);
+            holder.imgSeatSelected.setVisibility(isSelected(position)||!item.isSelectable() ? View.VISIBLE : View.GONE);
 
         } else if (type == AbstractItem.TYPE_EDGE) {
             final EdgeItem item = (EdgeItem) mItems.get(position);
@@ -165,7 +165,7 @@ public class AirplaneAdapter extends SelectableAdapter<RecyclerView.ViewHolder> 
                 }
             });
 
-            holder.imgSeatSelected.setVisibility(isSelected(position)||!item.isSelectable() ? View.VISIBLE : View.INVISIBLE);
+            holder.imgSeatSelected.setVisibility(isSelected(position)||!item.isSelectable() ? View.VISIBLE : View.GONE);
 
         }
     }

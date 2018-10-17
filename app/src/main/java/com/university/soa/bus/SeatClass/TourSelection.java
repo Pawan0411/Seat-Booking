@@ -24,15 +24,15 @@ public class TourSelection extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ll=(LinearLayout)findViewById(R.id.layout1);
-        t1=(TextView)findViewById(R.id.seat);
-        Rl=(RelativeLayout)findViewById(R.id.home);
-        mtour1 = (Button) findViewById(R.id.Tour1);
-        mtour2 =(Button)findViewById(R.id.Tour2);
-        mtour3 = (Button)findViewById(R.id.Tour3);
-        mtour4 = (Button)findViewById(R.id.Tour4);
-        mtour5 = (Button)findViewById(R.id.Tour5);
-        mtour6 = (Button)findViewById(R.id.Tour6);
+        ll= findViewById(R.id.layout1);
+        t1= findViewById(R.id.seat);
+        Rl= findViewById(R.id.home);
+        mtour1 = findViewById(R.id.Tour1);
+        mtour2 = findViewById(R.id.Tour2);
+        mtour3 = findViewById(R.id.Tour3);
+        mtour4 = findViewById(R.id.Tour4);
+        mtour5 = findViewById(R.id.Tour5);
+        mtour6 = findViewById(R.id.Tour6);
         Rl.setVisibility(View.VISIBLE);
         ll.setVisibility(View.INVISIBLE);
         mtour1.setOnClickListener(new View.OnClickListener() {

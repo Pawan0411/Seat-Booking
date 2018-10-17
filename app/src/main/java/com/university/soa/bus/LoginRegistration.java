@@ -29,10 +29,10 @@ AppStatus appStatus;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        e1 = (EditText) findViewById(R.id.Name);
-        e2 = (EditText) findViewById(R.id.edt_Rpassword);
-        b1 = (Button) findViewById(R.id.btn_register);
-        b2 = (Button) findViewById(R.id.existinguser);
+        e1 = findViewById(R.id.Name);
+        e2 = findViewById(R.id.edt_Rpassword);
+        b1 = findViewById(R.id.btn_register);
+        b2 = findViewById(R.id.existinguser);
         Database = FirebaseDatabase.getInstance();
         ref = Database.getReference().child("Employee Details : ");
         appStatus = new AppStatus(getApplicationContext());

@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_login);
-                t1=(TextView)findViewById(R.id.seat) ;
-                ll=(LinearLayout)findViewById(R.id.layout1);
-                Rl=(RelativeLayout)findViewById(R.id.home);
+                t1= findViewById(R.id.seat);
+                ll= findViewById(R.id.layout1);
+                Rl= findViewById(R.id.home);
                 ll.setVisibility(View.VISIBLE);
                 t1.setVisibility(View.VISIBLE);
                 Rl.setVisibility(View.INVISIBLE);
@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Database = FirebaseDatabase.getInstance();
                 ref = Database.getReference().child("Employee Details : ");
                 appStatus=new AppStatus(getApplicationContext());
-                login = (Button) findViewById(R.id.btn_login);
-                newuser = (Button) findViewById(R.id.newuser);
-                edt_empcode = (EditText) findViewById(R.id.CodeNum);
+                login = findViewById(R.id.btn_login);
+                newuser = findViewById(R.id.newuser);
+                edt_empcode = findViewById(R.id.CodeNum);
 
 
                 newuser.setOnClickListener(new View.OnClickListener() {

@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.university.soa.bus.R;
 import com.university.soa.bus.SavedSeats;
 import com.university.soa.bus.book;
+import com.university.soa.bus.utils.RecyclerViewItemDecorator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,7 +46,7 @@ public class SeatSelection extends AppCompatActivity implements OnSeatSelected {
         mBook=findViewById(R.id.button2);
         time=findViewById(R.id.show);
         seats=getSharedPreferences("seats",MODE_PRIVATE);
-        positions= new HashSet<String>(seats.getStringSet("selected", new HashSet<String>()));
+        positions= new HashSet<>(seats.getStringSet("selected", new HashSet<String>()));
         //  time.setText(R.string.show);
         mBook.setText(R.string.button2);
         //   txtSeatSelected = (TextView)findViewById(R.id.txt_seat_selected);
@@ -62,7 +63,10 @@ public class SeatSelection extends AppCompatActivity implements OnSeatSelected {
         }
 
         GridLayoutManager manager = new GridLayoutManager(this, COLUMNS);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.lst_items);
+
+        RecyclerView recyclerView = findViewById(R.id.lst_items);
+        int spaceInPixels = 0;
+        recyclerView.addItemDecoration(new RecyclerViewItemDecorator(spaceInPixels));
         recyclerView.setLayoutManager(manager);
 
         AirplaneAdapter adapter = new AirplaneAdapter(this, items);

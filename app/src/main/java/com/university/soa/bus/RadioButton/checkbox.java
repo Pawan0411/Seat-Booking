@@ -22,11 +22,11 @@ public class checkbox extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timing);
-         R1 = (RadioButton) findViewById(R.id.Opt1);
-        R2 = (RadioButton) findViewById(R.id.Opt2);
-        R3 = (RadioButton) findViewById(R.id.Opt3);
-        R4= (RadioButton) findViewById(R.id.Opt4);
-        B1= (Button) findViewById(R.id.OK);
+         R1 = findViewById(R.id.Opt1);
+        R2 = findViewById(R.id.Opt2);
+        R3 = findViewById(R.id.Opt3);
+        R4= findViewById(R.id.Opt4);
+        B1= findViewById(R.id.OK);
         B1.setText(R.string.OK);
         R1.setText(R.string.Opt1);
         R2.setText(R.string.Opt2);

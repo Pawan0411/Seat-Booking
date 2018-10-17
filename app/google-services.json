@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "679040739999",
-    "firebase_url": "https://busseat-fc01b.firebaseio.com",
-    "project_id": "busseat-fc01b",
-    "storage_bucket": "busseat-fc01b.appspot.com"
+    "project_number": "465759209936",
+    "firebase_url": "https://seatbook-f20b9.firebaseio.com",
+    "project_id": "seatbook-f20b9",
+    "storage_bucket": "seatbook-f20b9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:679040739999:android:fcc52b3988a821bf",
+        "mobilesdk_app_id": "1:465759209936:android:fcc52b3988a821bf",
         "android_client_info": {
           "package_name": "com.university.soa.bus"
         }
       },
       "oauth_client": [
         {
-          "client_id": "679040739999-rgf4sr8a96c7siegmosvjhl1uh7vi2jr.apps.googleusercontent.com",
+          "client_id": "465759209936-hsofkkm1u35qln4m4vi1llqur1i082i8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.university.soa.bus",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "679040739999-ni3hvaj1364mq7am4a3vk5mtbrtpg83e.apps.googleusercontent.com",
+          "client_id": "465759209936-ljvp2e1re3405bftjd8c3126jas527i6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCU-SqStNKcR-eh1-pROv98Z5_dcUqLFcs"
+          "current_key": "AIzaSyCO1hFhh563nbBzELHCLJVselEuOnl7Rmc"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "679040739999-ni3hvaj1364mq7am4a3vk5mtbrtpg83e.apps.googleusercontent.com",
+              "client_id": "465759209936-ljvp2e1re3405bftjd8c3126jas527i6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
