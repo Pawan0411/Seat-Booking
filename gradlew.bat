@@ -45,6 +45,8 @@ echo location of your Java installation.
 
 goto fail
 
+goto fail
+
 :init
 @rem Get command-line arguments, handling Windowz variants
 
